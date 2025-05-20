@@ -6,13 +6,12 @@ import { useDispatch } from "react-redux";
 const TodoItem: FC<ITodo> = ({ completed, id, text }) => {
    const dispatch = useDispatch<AppDispatch>();
 
-   const style =
-      status === "important"
-         ? "flex justify-between items-center mb-6 p-4 rounded-lg min-h-3 bg-red-900"
-         : "flex justify-between items-center mb-6 p-4 rounded-lg min-h-3 bg-gray-700 ";
    return (
       <>
-         <li key={id} className={style}>
+         <li
+            key={id}
+            className="flex justify-between items-center mb-6 p-4 rounded-lg min-h-3 bg-gray-700 "
+         >
             <label className="flex items-center cursor-pointer relative">
                <input
                   type="checkbox"

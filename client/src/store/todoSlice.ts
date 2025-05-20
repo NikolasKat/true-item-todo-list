@@ -32,7 +32,7 @@ export const fetchTodos = createAsyncThunk(
 
 export const deleteTodo = createAsyncThunk(
    "todos/deleteTodo",
-   async function (todoID: number, { rejectWithValue, dispatch }) {
+   async function (todoID: string, { rejectWithValue, dispatch }) {
       try {
          const response = await axios
             .delete(`http://localhost:4444/todos/${todoID}`, {
@@ -65,7 +65,7 @@ export const addNewTodo = createAsyncThunk(
 
 export const handleToggle = createAsyncThunk(
    "todos/handleToggle",
-   async function (todoID: number, { rejectWithValue, dispatch }) {
+   async function (todoID: string, { rejectWithValue, dispatch }) {
       try {
          const response = await axios
             .put(`http://localhost:4444/todos/${todoID}`)

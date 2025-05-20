@@ -29,6 +29,32 @@ app.post("/todos", (req, res) => {
    res.status(201).json(newTodo);
 });
 
+app.delete("/todos/:id", (req, res) => {
+   const todoId = req.params.id;
+   console.log(`Delete todo with id: ${todoId}`);
+
+   todos.todos = todos.todos.filter(
+      (course) => course.id.toString() !== todoId
+   );
+   res.status(204).send({ message: "Todo was deleted" });
+});
+
+app.put("/todos/:id", (req, res) => {
+   const todoId = req.params.id;
+
+   todos.todos = todos.todos.map((course) =>
+      course?.id?.toString() === todoId
+         ? (course = {
+              id: course.id,
+              text: course.text,
+              completed: !course.completed,
+           })
+         : course
+   );
+
+   res.status(201).send({ message: "Status was changed" });
+});
+
 app.listen(port, () => {
    console.log(`Server started!`);
 });

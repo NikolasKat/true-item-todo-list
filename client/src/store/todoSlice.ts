@@ -22,7 +22,7 @@ export const fetchTodos = createAsyncThunk(
          const response = await axios
             .get("http://localhost:4444/todos")
             .then((response) => {
-               dispatch(setTodo(response.data));
+               dispatch(setSubjects(response.data));
             });
       } catch (error) {
          return rejectWithValue(error);
@@ -34,18 +34,13 @@ export const deleteTodo = createAsyncThunk(
    "todos/deleteTodo",
    async function (todoID: number, { rejectWithValue, dispatch }) {
       try {
-         dispatch(removeTodo(todoID));
-      } catch (error) {
-         return rejectWithValue(error);
-      }
-   }
-);
+         const response = await axios
+            .delete(`http://localhost:4444/todos/${todoID}`, {
+               data: { id: todoID },
+            })
+            .then((response) => console.log(response.data));
 
-export const handleToggle = createAsyncThunk(
-   "todos/handleToggle",
-   async function (todoID: number, { rejectWithValue, dispatch }) {
-      try {
-         dispatch(changeStatus(todoID));
+         dispatch(removeTodo(todoID));
       } catch (error) {
          return rejectWithValue(error);
       }
@@ -68,18 +63,28 @@ export const addNewTodo = createAsyncThunk(
    }
 );
 
+export const handleToggle = createAsyncThunk(
+   "todos/handleToggle",
+   async function (todoID: number, { rejectWithValue, dispatch }) {
+      try {
+         const response = await axios
+            .put(`http://localhost:4444/todos/${todoID}`)
+            .then((response) => {
+               console.log(response.data);
+            });
+         dispatch(changeStatus(todoID));
+      } catch (error) {
+         return rejectWithValue(error);
+      }
+   }
+);
+
 export const todoSlice = createSlice({
    name: "todos",
    initialState,
    reducers: {
-      setTodo(state, action) {
+      setSubjects(state, action) {
          state.todos = action.payload;
-      },
-      removeTodo(state, action) {
-         const newData = state.todos.filter(
-            (item) => item.id !== action.payload
-         );
-         state.todos = newData;
       },
       addTodo(state, action) {
          if (action.payload.length) {
@@ -90,6 +95,14 @@ export const todoSlice = createSlice({
             });
             console.log(state.todos);
          }
+      },
+      removeTodo(state, action) {
+         const newData = state.todos.filter(
+            (item) => item.id !== action.payload
+         );
+         state.todos = newData;
+
+         console.log(state.todos);
       },
       changeStatus(state, action) {
          const newData = state.todos.map((item) => {
@@ -109,5 +122,6 @@ export const todoSlice = createSlice({
    },
 });
 
-export const { changeStatus, removeTodo, setTodo, addTodo } = todoSlice.actions;
+export const { setSubjects, removeTodo, changeStatus, addTodo } =
+   todoSlice.actions;
 export default todoSlice.reducer;

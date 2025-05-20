@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ea3ce38f-aaaf-4330-8084-b37bd9a697b5)# My Todo-list Application
+# My Todo-list Application
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -42,5 +42,5 @@ cd todo-list
 cd server
 
 npm run server <--- "if you want to start run server" --->
-npm run client <--- "if you want to start run clint" --->
-npm run start  <--- "if you want to start run clint and server at the same time" --->
+npm run client <--- "if you want to start run client" --->
+npm run start  <--- "if you want to start run client and server at the same time" --->

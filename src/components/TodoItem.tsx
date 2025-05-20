@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { ITodo } from "../store/todoSlice";
+import { deleteTodo, handleToggle, type ITodo } from "../store/todoSlice";
 import type { AppDispatch } from "../store/store";
 import { useDispatch } from "react-redux";
 
@@ -18,7 +18,7 @@ const TodoItem: FC<ITodo> = ({ completed, id, text }) => {
                   type="checkbox"
                   checked={completed}
                   onChange={() => {
-                     // dispatch(handleToggle(id));
+                     dispatch(handleToggle(id));
                   }}
                   className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-purple-600 checked:border-purple-600 mr-3"
                />
@@ -50,7 +50,7 @@ const TodoItem: FC<ITodo> = ({ completed, id, text }) => {
             </label>
             <button
                className="ms-2 text-lg font-medium bg-gray-600 p-2 rounded-xl"
-               // onClick={() => dispatch(removeTodo(id))}
+               onClick={() => dispatch(deleteTodo(id))}
             >
                Delete
             </button>

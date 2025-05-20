@@ -34,8 +34,6 @@
 
 Для запуску проекту на вашій локальній машині виконайте такі кроки:
 
-### 1. Клонування репозиторію
-
 ```bash
 git clone https://github.com/NikolasKat/true-item-todo-list
 cd todo-list

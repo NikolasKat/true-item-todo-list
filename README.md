@@ -8,31 +8,31 @@
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## Опис проекту
+## Project Description
 
-Це простий додаток «Список справ» (Todo-list), розроблений у рамках тестового завдання. Він дозволяє користувачам додавати, переглядати, позначати як виконані та видаляти завдання. Проект складається з двох частин: клієнтської частини (фронтенд) на React і серверної частини (бекенд) на Express.js.
+This is a simple Todo-list application developed as part of a test case. It allows users to add, view, mark tasks as completed, and delete them. The project consists of two parts: the client side (frontend) in React and the server side (backend) in Express.js.
 
-## Використані технології
+## Technologies used
 
-* **Фронтенд:**
-    * [React](https://react.dev/) - Бібліотека JavaScript для створення користувацьких інтерфейсів.
-    * [TypeScript](https://www.typescriptlang.org/) - Типізована надмножина JavaScript, що забезпечує кращу масштабованість і налагодження.
-    * [Redux Toolkit](https://redux-toolkit.js.org/) - Офіційно рекомендований набір інструментів для ефективної розробки Redux.
-    * [Tailwind CSS](https://tailwindcss.com/) - Утилітарний CSS-фреймворк для швидкого створення користувацьких інтерфейсів.
-    * [Vite](https://vitejs.dev/) - Інструмент збірки нового покоління для фронтенд-розробки.
-* **Бэкенд:**
-    * [Express.js](https://expressjs.com/) - Швидкий, негнучкий, мінімалістичний веб-фреймворк для Node.js.
-    * [Node.js](https://nodejs.org/) - Середовище виконання JavaScript, побудоване на движку V8.
+* **Frontend:**
+    * [React](https://react.dev/) 
+    * [TypeScript](https://www.typescriptlang.org/) 
+    * [Redux Toolkit](https://redux-toolkit.js.org/) 
+    * [Tailwind CSS](https://tailwindcss.com/) 
+    * [Vite](https://vitejs.dev/) 
+* **Backend:**
+    * [Express.js](https://expressjs.com/) 
+    * [Node.js](https://nodejs.org/) 
 
-## Можливості
+## Features
 
-* Додавання нових завдань.
-* Позначка завдань як виконаних/невиконаних.
-* Видалення завдань.
+* Adding new tasks.
+* Mark tasks as completed/uncompleted.
+* Deleting tasks.
 
-## Встановлення та запуск
+## Installation and start-up
 
-Для запуску проекту на вашій локальній машині виконайте такі кроки:
+To run the project on your local machine, follow these steps:
 
 ```bash
 git clone https://github.com/NikolasKat/true-item-todo-list
